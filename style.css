@@ -9,22 +9,37 @@ body, html {
   font-family: 'Cursive', sans-serif;
 }
 
-.name {
+.name, .tag {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
+  transform: translateX(-50%);
   color: #000000;
   z-index: 1;
 }
 
+.name {
+  top: 50%;
+  font-size: 4rem; /* Default font size for larger screens */
+}
+
 .tag {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    color: #000000;
-    z-index: 1;
+  top: 60%;
+  font-size: 2rem; /* Adjusted for demonstration, set as needed */
+}
+
+/* Media query for devices wider than 480px (typically tablets and desktops) */
+@media (min-width: 481px) {
+  .name {
+    font-size: 4rem; /* Larger font size for wider screens */
   }
+  .tag {
+    font-size: 2rem; /* Adjust as needed */
+  }
+}
+
+/* Media query for devices up to 480px wide (mobile devices) */
+@media (max-width: 480px) {
+  .name, .tag {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+}
